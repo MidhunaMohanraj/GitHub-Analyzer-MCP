@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "github-analyzer-mcp"
+version = "0.1.0"
+description = "MCP server that gives Claude deep GitHub repository analysis capabilities"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [
+    { name = "Midhuna Mohanraj", email = "midhunamohanraj@gmail.com" }
+]
+keywords = ["mcp", "github", "claude", "ai", "repository-analysis", "model-context-protocol"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "mcp>=1.0.0",
+    "httpx>=0.27.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/MidhunaMohanraj/github-analyzer-mcp"
+Repository = "https://github.com/MidhunaMohanraj/github-analyzer-mcp"
+Issues = "https://github.com/MidhunaMohanraj/github-analyzer-mcp/issues"
+
+[project.scripts]
+github-analyzer-mcp = "github_analyzer_mcp:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/github_analyzer_mcp"]
